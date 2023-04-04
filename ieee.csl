@@ -45,7 +45,7 @@
     <category field="engineering"/>
     <category field="generic-base"/>
     <summary>IEEE style as per the 2021 guidelines, V 01.29.2021.</summary>
-    <updated>2022-10-11T00:52:46+10:00</updated>
+    <updated>2023-03-29T12:47:55+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="en">
@@ -148,7 +148,7 @@
   </macro>
   <macro name="title">
     <choose>
-      <if type="bill book graphic legal_case legislation motion_picture song" match="any">
+      <if type="bill book graphic legal_case legislation motion_picture song standard" match="any">
         <text variable="title" font-style="italic"/>
       </if>
       <else>
@@ -414,6 +414,17 @@
           <group delimiter=", ">
             <text macro="title"/>
             <text variable="number"/>
+            <text macro="issued"/>
+          </group>
+          <text macro="access"/>
+        </else-if>
+        <else-if type="standard">
+          <text macro="title" suffix=", "/>
+          <text variable="number" suffix=", "/>
+          <text variable="authority" suffix=" "/>
+          <text variable="committee" suffix=", "/>
+          <text variable="publisher-place" suffix=", "/>
+          <group delimiter=", ">
             <text macro="issued"/>
           </group>
           <text macro="access"/>
